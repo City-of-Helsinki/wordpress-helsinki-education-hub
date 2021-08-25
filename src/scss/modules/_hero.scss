@@ -1,0 +1,15 @@
+.hero{
+    &__content {
+
+    }
+    &__excerpt {
+        font-size: 1.35rem;
+    }
+    &.is-full-width {
+        .hero__content {
+			@include breakpoint('m') {
+				background-color: var(--primary-color);;
+			}
+        }
+    }
+}

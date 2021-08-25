@@ -1,0 +1,69 @@
+@mixin lift-block-light($background){
+    background: $background;
+    color: $black;
+    h2,h3{
+        color: $black;
+    }
+    a{
+        color: $black;
+    }
+}
+
+@mixin lift-block-dark($background){
+    background: $background;
+    color: $white;
+    h2,h3{
+        color: $white;
+    }
+    a{
+        color: $white;
+    }
+}
+
+.lift-block{
+    h2{
+        font-weight: 600;
+        font-size: var(--fontsize-heading-l);
+    }
+    &.is-style{
+        &-default{
+            @include lift-block-light($white);
+        }
+        &-coat-of-arms{
+            @include lift-block-light(var(--color-coat-of-arms));
+        }
+        &-gold{
+            @include lift-block-light(var(--color-gold));
+        }
+        &-silver{
+            @include lift-block-light(var(--color-silver));
+        }
+        &-brick{
+            @include lift-block-light(var(--color-brick));
+        }
+        &-bus{
+            @include lift-block-dark(var(--color-bus));
+        }
+        &-copper{
+            @include lift-block-light(var(--color-copper));
+        }
+        &-engel{
+            @include lift-block-light(var(--color-engel));
+        }
+        &-fog{
+            @include lift-block-light(var(--color-fog)); 
+        }
+        &-metro{
+            @include lift-block-light(var(--color-metro));
+        }
+        &-summer{
+            @include lift-block-light(var(--color-summer));
+        }
+        &-suomenlinna{
+            @include lift-block-light(var(--color-suomenlinna));
+        }
+        &-tram{
+            @include lift-block-light(var(--color-tram));
+        }
+    }   
+}

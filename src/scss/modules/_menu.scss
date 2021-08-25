@@ -1,0 +1,54 @@
+#main-menu-nav {
+	border-top: none;
+	border-bottom: none;
+    display: none;
+    @include breakpoint('l'){
+        display: flex;
+    }    
+	#main-menu {
+        height: auto;
+		.menu__item {
+			a {
+				font-size: 1rem;
+			}
+		}
+
+		> .menu__item {
+			padding: 0;
+
+			> a {
+				border-bottom: none;
+            }
+        }
+    }
+}
+
+.navigation__languages{
+    .menu{
+        &__item{
+            a{
+                text-transform: uppercase;
+            }
+            margin-left: 0 !important;
+            padding-left: var(--spacing-s);
+            padding-right: var(--spacing-s);
+            position: relative;
+            &:after{
+                content: "";
+                position: absolute;
+                top: 1px;
+                bottom: 3px;
+                right: 0;
+                width: 1px; 
+                background: $black;
+            }
+            &:last-child{
+                padding-right: 0;
+                &:after{
+                    content: none;
+                }
+                
+            }
+        }
+    }
+}

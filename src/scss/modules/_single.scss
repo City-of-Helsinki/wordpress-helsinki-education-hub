@@ -1,0 +1,38 @@
+.single__img{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 500px;
+    background-color: $body-background-color;
+    @include breakpoint('m') {
+        height: 500px;
+    }
+
+    @include breakpoint('l') {
+        height: 600px;
+    }
+}
+.article_title{
+    h1{
+        font-weight: 600 !important;
+        font-size: var(--fontsize-heading-l);
+    }
+}
+@media only screen and (min-width: 992px) {
+    .article_margin{
+        margin-top: var(--spacing-4-xl) ;
+      
+    }
+  }
+
+  @media only screen and (max-width: 992px) {
+    .article_margin{
+       margin: 0;  
+    }
+  }
+
+
+.is-style-lead{
+    font-size: var(--fontsize-body-xl);
+}

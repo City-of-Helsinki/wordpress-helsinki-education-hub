@@ -1,0 +1,20 @@
+footer{
+    .widget--cf7-footer{
+        width: 50%;
+        display: flex;
+        flex: 1 1 auto;
+        .widget__title{
+            width: 25%;
+        }
+    }
+
+    .hds-text-input{
+        &__input-wrapper{
+            flex-direction: column !important;
+            margin-bottom: spacing('xl');
+            .wpcf7-not-valid-tip{
+                margin-top: spacing('xs');
+            }
+        }
+    }
+}
