@@ -24,10 +24,10 @@ if( !empty($block['align']) ) {
 <section  id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
     <div class="hds-container">
         <div class="grid">
-            <div class="grid__column l-4 s-6 xs-12">
+            <div class="grid__column l-4 s-6 xs-12 grid_margin">
                 <h2><?php echo __("Events", "educationhub") ?></h2>
             </div>
-            <div class="grid__column l-8 s-6 xs-12">
+            <div class="grid__column l-8 s-6 xs-12 grid_margin">
             <h3><?php echo __("Upcoming events", "educationhub") ?></h3>
                 <div class="grid s-up-2 l-up-3">
                 <?php

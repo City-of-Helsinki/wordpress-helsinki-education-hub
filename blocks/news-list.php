@@ -24,10 +24,10 @@ if( !empty($block['align']) ) {
 <section  id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
     <div class="hds-container">
         <div class="grid">
-            <div class="grid__column l-4 grid_margin">
+            <div class="grid__column l-4 s-6 xs-12 grid_margin">
                 <h2><?php echo __("News", "educationhub") ?></h2>
             </div>
-            <div class="grid__column l-8 grid_margin">
+            <div class="grid__column l-8 s-6 xs-12 grid_margin">
                 <div class="grid s-up-2 l-up-3">
                 <?php
                     $event_query = educationhub_news_get_latest();
@@ -48,7 +48,7 @@ if( !empty($block['align']) ) {
 
                 </div>
 
-                <a href="<?php echo get_post_type_archive_link('post') ?>" class="button hds-button"><?php echo __('All news', 'educationhub') ?></a>
+                <a class="button hds-button" href="<?php echo get_post_type_archive_link('post') ?>" ><?php echo __('All news', 'educationhub') ?></a>
             </div>
         </div>
     </div>

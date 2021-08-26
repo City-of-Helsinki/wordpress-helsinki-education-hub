@@ -1,32 +1,60 @@
-@media only screen and (min-width: 992px) {
+@media only screen and (max-width: 4000px) {
     .grid_margin{
-        margin-top: var(--spacing-4-xl) ;
-        h1,h2,h3,h4,h5,h6{
-            margin: 0;
+        padding-top: var(--spacing-4-xl);
+        h1,h2{
+            margin-top: 0;
+            margin-bottom: 0;
         }
-        margin-bottom: var(--spacing-4-xl) ;
+        h3,h4,h5,h6{
+            margin-top: 0;
+        }
+        
+         padding-bottom: var(--spacing-4-xl);
+    }
+  }
+
+@media only screen and (max-width: 992px) {
+    .grid_margin{
+       padding-top: var(--spacing-4-xl);
+        h1,h2,h4,h5,h6{
+            margin-top: 0;
+        }
+       padding-bottom: var(--spacing-4-xl);
     
     }
   }
 
-  @media only screen and (max-width: 992px) {
+
+
+@media only screen and (max-width: 768px) {
     .grid_margin{
-        margin-top: var(--spacing-3-xl) ;
+        padding-top: spacing('l');
+        // padding-left: 50px;
+
         h1,h2,h3,h4,h5,h6{
-            margin: 0;
+            margin-top: 0;
+            margin-bottom: 0;
         }
-        margin-bottom: var(--spacing-3-xl) ;
-    
+        h3{
+            margin-bottom:var(--spacing-l);
+        }
+         padding-bottom: var(--spacing-l);
     }
   }
 
 
   @media only screen and (max-width: 576px) {
     .grid_margin{
-        margin-top: var(--spacing-l) ;
+        padding-top: spacing('l');
+        // padding-left: 30px;
+
         h1,h2,h3,h4,h5,h6{
-            margin: 0;
+            margin-top: 0;
+            margin-bottom: 0;
         }
-        margin-bottom: var(--spacing-l) ;
+        h3{
+            margin-bottom:var(--spacing-l);
+        }
+         padding-bottom: var(--spacing-l);
     }
   }
