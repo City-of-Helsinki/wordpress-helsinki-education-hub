@@ -13,6 +13,16 @@ function educationhub_setup_templates(){
 
     if (is_singular('event')){
         add_action('helsinki_content_article_meta', 'educationhub_content_event_date', 20);
+        remove_action('helsinki_content_article_meta', 'helsinki_content_article_categories', 10);
+        remove_action('helsinki_content_article_meta', 'helsinki_content_article_author', 20);
+        remove_action('helsinki_content_article_meta', 'helsinki_content_article_date', 30);
+        remove_action('helsinki_content_article_meta', 'helsinki_content_article_updated', 40);
+
+    }
+    // Remove categories and tags from archive page's sidebar
+    if (is_post_type_archive('event')){
+        remove_action('helsinki_loop_sidebar', 'helsinki_loop_sidebar_categories', 10);
+        remove_action('helsinki_loop_sidebar', 'helsinki_loop_sidebar_tags', 20);
     }
 }
 

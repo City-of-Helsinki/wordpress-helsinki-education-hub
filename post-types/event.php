@@ -38,7 +38,7 @@ function event_init() {
 			'hierarchical'          => false,
 			'show_ui'               => true,
 			'show_in_nav_menus'     => true,
-			'supports'              => [ 'title', 'editor' ],
+			'supports'              => [ 'title', 'editor', 'thumbnail', 'excerpt' ],
 			'has_archive'           => true,
 			'rewrite'               => true,
 			'query_var'             => true,
@@ -119,3 +119,18 @@ function event_bulk_updated_messages( $bulk_messages, $bulk_counts ) {
 }
 
 add_filter( 'bulk_post_updated_messages', 'event_bulk_updated_messages', 10, 2 );
+
+
+add_filter( 'pre_get_posts' , 'educationhub_event_order', 10, 1 );
+
+function educationhub_event_order( $query ) {
+	
+	// Check if the query is for an archive
+		if ( is_post_type_archive( 'event' ) && $query->is_main_query() ) {
+			$query->set( 'orderby', 'meta_value' );
+			$query->set( 'order', 'DESC' );
+			$query->set( 'meta_key', 'event_starts_date' );
+	}
+	
+	return $query;
+}
