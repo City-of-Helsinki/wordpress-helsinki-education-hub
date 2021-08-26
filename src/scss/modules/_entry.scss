@@ -9,7 +9,7 @@
         }
     }
     &__title{
-        &--grid{
+        &.entry__title--grid{
             font-size: var(--fontsize-heading-s);
             font-weight: 600;
             margin-bottom: var(--spacing-s);

@@ -5,7 +5,6 @@ get_header();
   * Hook: helsinki_content_before
   *
   */
-do_action("helsinki_content_before");
 
 while ( have_posts() ) {
 
@@ -15,11 +14,12 @@ while ( have_posts() ) {
   <div class="single__img" style="background-image: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'full');?>)" ></div> 
 <?php endif; ?>
 
-
- <div class="hds-container lift-block article_title">
+ <div class="hds-container lift-block">
     <div class="grid">
-      <div class="grid__column l-4">
-        <h1><?php the_title(); ?></h1>
+      <div class="grid__column l-4 grid_margin">
+        <div class="article_title">
+          <h1 class="grid_margin__header"><?php the_title(); ?></h1>
+        </div>
         <div class="content__meta meta">
 	    <?php
     		do_action('helsinki_content_article_meta');
@@ -27,7 +27,8 @@ while ( have_posts() ) {
         </div>
 
       </div>
-      <div class="grid__column l-8 article_margin">
+      <div class="grid__column l-8 grid_margin">
+        <span class="content-top"></span>
         <?php the_content(); ?>
       </div>
     </div>

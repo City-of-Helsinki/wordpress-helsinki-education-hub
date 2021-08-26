@@ -11,9 +11,35 @@
         margin-top: var(--spacing-4-xl) ;
         margin-bottom: var(--spacing-4-xl) ;
     }
-
-    > h1, > h2, > h3, > h4, > h5, >h6{
+    &__header{
         margin-top:0;
-        margin-bottom: var(--spacing-xs);
+        font-weight: 600;
+    }
+    &.no-mb{
+        margin-bottom: 0;
+    }
+    &.no-mt{
+        margin-top: 0;
+    }
+    @each $breakpoint, $size in $breakpoints {
+        @include breakpointMax($breakpoint) {
+                &.no-mb-up-#{$breakpoint} {
+                    margin-bottom: 0;
+                }
+                &.no-mt-up-#{$breakpoint} {
+                    margin-top: 0;
+                }
+                &.no-m-up-#{$breakpoint} {
+                    margin-bottom: 0;
+                    margin-top: 0;
+                }
+        }
+    }
+}
+main{
+    .grid_margin{
+        .content-top + h2{
+                margin-top: 0;
+        }
     }
 }
