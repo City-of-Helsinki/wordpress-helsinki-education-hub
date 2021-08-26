@@ -1,0 +1,24 @@
+.entry {
+    &--grid{
+        > a{
+            &:focus, &:hover{
+                .entry__title--grid{
+                    text-decoration: underline;
+                }
+            }   
+        }
+    }
+    &__title{
+        &--grid{
+            font-size: var(--fontsize-heading-s);
+            font-weight: 600;
+            margin-bottom: var(--spacing-s);
+            margin-top: 0;
+        }
+    }
+    &__excerpt{
+        &--grid{
+            line-height: var(--lineheight-s);
+        }
+    }
+}

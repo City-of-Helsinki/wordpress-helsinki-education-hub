@@ -1,32 +1,19 @@
-@media only screen and (min-width: 992px) {
-    .grid_margin{
-        margin-top: var(--spacing-4-xl) ;
-        h1,h2,h3,h4,h5,h6{
-            margin: 0;
-        }
-        margin-bottom: var(--spacing-4-xl) ;
-    
-    }
-  }
 
-  @media only screen and (max-width: 992px) {
-    .grid_margin{
+.grid_margin{
+    margin-top: var(--spacing-l) ;
+    margin-bottom: var(--spacing-l);
+
+    @include breakpoint('m'){
         margin-top: var(--spacing-3-xl) ;
-        h1,h2,h3,h4,h5,h6{
-            margin: 0;
-        }
         margin-bottom: var(--spacing-3-xl) ;
-    
     }
-  }
-
-
-  @media only screen and (max-width: 576px) {
-    .grid_margin{
-        margin-top: var(--spacing-l) ;
-        h1,h2,h3,h4,h5,h6{
-            margin: 0;
-        }
-        margin-bottom: var(--spacing-l) ;
+    @include breakpoint('l'){
+        margin-top: var(--spacing-4-xl) ;
+        margin-bottom: var(--spacing-4-xl) ;
     }
-  }
+
+    > h1, > h2, > h3, > h4, > h5, >h6{
+        margin-top:0;
+        margin-bottom: var(--spacing-xs);
+    }
+}
