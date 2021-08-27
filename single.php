@@ -27,7 +27,7 @@ while ( have_posts() ) {
         </div>
 
       </div>
-      <div class="grid__column l-8 grid_margin no-mt">
+      <div class="grid__column l-8 grid_margin">
         <span class="content-top"></span>
         <?php the_content(); ?>
       </div>
