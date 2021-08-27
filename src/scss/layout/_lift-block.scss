@@ -21,10 +21,18 @@
 }
 
 .lift-block{
-    h2{
+    h1,h2{
         font-weight: 600;
         font-size: var(--fontsize-heading-l);
     }
+    h3,h4,h5{
+        font-weight: 600;
+        font-size: var(--fontsize-heading-m);
+    }
+    blockquote{
+        font-size: var(--fontsize-heading-m);
+    }
+    
     &.is-style{
         &-default{
             @include lift-block-light($white);
