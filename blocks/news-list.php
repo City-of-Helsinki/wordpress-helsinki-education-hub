@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Testimonial Block Template.
+ * News List Block Template.
  *
  */
 
@@ -24,22 +24,29 @@ if( !empty($block['align']) ) {
 <section  id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
     <div class="hds-container">
         <div class="grid">
-            <div class="grid__column l-4 grid_margin">
-                <h2><?php echo __("News", "educationhub") ?></h2>
+            <div class="grid__column l-4 grid_margin no-mb-up-l">
+                <h2 class="grid_margin__header"><?php echo __('Recent Posts', 'helsinki-universal') ?></h2>
             </div>
-            <div class="grid__column l-8 grid_margin">
+            <div class="grid__column l-8 grid_margin no-mt-up-l">
                 <div class="grid s-up-2 l-up-3">
                 <?php
-                    $event_query = educationhub_news_get_latest();
+                    $event_query = helsinki_front_page_recent_posts_query(array(
+                        'cat' => helsinki_theme_mod('helsinki_front_page_recent-posts', 'category', 0),
+                        'posts_per_page' => helsinki_theme_mod('helsinki_front_page_recent-posts', 'posts_per_page', 3),
+                    ));
+
                     while ( $event_query->have_posts() ) {
                         $event_query->the_post(); 
         
                         ?>
-                            <article class="grid__column">
+                            <article class="grid__column entry entry--grid">
                                 <a href="<?php echo esc_url( get_permalink() ); ?>">
-                                   <strong><?php echo esc_html( get_the_title() ); ?> </strong> 
+                                   <h3 class="entry__title entry__title--grid"><?php echo esc_html( get_the_title() ); ?> </h3> 
+                                
+                                    <p class="entry__excerpt--grid excerpt size-m">
+                                        <?php helsinki_content_excerpt(); ?>
+                                    </p>
                                 </a>
-                                <?php echo esc_html( the_excerpt() ); ?>
                                 <div>
                             </article>
                     <?php 
@@ -47,8 +54,11 @@ if( !empty($block['align']) ) {
                 ?>
 
                 </div>
-
-                <a href="<?php echo get_post_type_archive_link('post') ?>" class="button hds-button"><?php echo __('All news', 'educationhub') ?></a>
+                <a class="button hds-button" href="<?php echo esc_url(get_permalink(get_option('page_for_posts'))); ?>">
+                    <?php
+                        esc_html_e('All posts', 'helsinki-universal');
+                    ?>
+                </a>
             </div>
         </div>
     </div>

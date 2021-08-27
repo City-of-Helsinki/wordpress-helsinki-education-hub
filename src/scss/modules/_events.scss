@@ -1,12 +1,6 @@
-.events-list{
-    h3{
-        font-weight: 600;
-        font-size: var(--fontsize-heading-l);
-        margin-bottom: var(--spacing-l);
-    }
-    article{
-        a{
-            font-weight: 600;;
-        }
+.event{
+
+    &.entry{
+        margin-bottom: var(--spacing-4-xl);
     }
 }
