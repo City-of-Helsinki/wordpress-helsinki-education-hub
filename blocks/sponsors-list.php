@@ -46,7 +46,7 @@ $post_query = new WP_Query($args);
             if($post_query->have_posts() ) {
                 while($post_query->have_posts() ) {
                     $post_query->the_post();?>
-                    <div class = "grid__column l-3 m-6 s-6 xs-6 grid_margin">
+                    <div class = "grid__column l-3 m-3 s-6 xs-6 grid_margin">
                     <?php if(get_field('link',get_the_ID()) != null): ?>
                       <a style="display: block;" href=<?php echo get_field('link',get_the_ID());?>> <?php echo wp_get_attachment_image(get_field('logo',get_the_ID()),'full')?></a>
                     <?php else: ?>
