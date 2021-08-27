@@ -24,11 +24,11 @@ if( !empty($block['align']) ) {
 <section  id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
     <div class="hds-container">
         <div class="grid">
-            <div class="grid__column l-4 s-6 xs-12 grid_margin">
-                <h2><?php echo __("Events", "educationhub") ?></h2>
+            <div class="grid__column l-4 grid_margin no-mb-up-l">
+                <h2 class="grid_margin__header"><?php echo __("Events", "educationhub") ?></h2>
             </div>
-            <div class="grid__column l-8 s-6 xs-12 grid_margin">
-            <h3><?php echo __("Upcoming events", "educationhub") ?></h3>
+            <div class="grid__column l-8 grid_margin no-mt-up-l">
+                <h3 class="grid_margin__header"><?php echo __("Upcoming events", "educationhub") ?></h3>
                 <div class="grid s-up-2 l-up-3">
                 <?php
                     $event_query = educationhub_events_get_latest();
@@ -36,12 +36,13 @@ if( !empty($block['align']) ) {
                         $event_query->the_post(); 
         
                         ?>
-                            <article class="grid__column ">
+                            <article class="grid__column entry entry--grid event" aria-labelledby="entry-event-<?php get_the_ID() ?>">
                                 <a href="<?php echo esc_url( get_permalink() ); ?>">
-                                    <?php echo esc_html( get_the_title() ); ?>
+                                    <div id="entry-event-<?php get_the_ID() ?>" class="entry__title entry__title--grid"><?php echo esc_html( get_the_title() ); ?></div>
+                                    <span class="entry__excerpt--grid excerpt size-m">
+                                    <?php get_template_part("partials/content/event-date") ?>
+                                    </span>
                                 </a>
-                                <?php get_template_part("partials/content/event-date") ?>
-
                             </article>
                     <?php 
                     }

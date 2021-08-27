@@ -27,7 +27,7 @@ $content_fold_link = get_field('content_fold_link');
     <div class="hds-container">
         <div class="grid">
             <div class="grid__column l-4 s-6 xs-12 grid_margin">
-                <h2><?php echo get_field('content_fold_title'); ?></h2>
+                <h2 class="grid_margin__header"><?php echo get_field('content_fold_title'); ?></h2>
             </div>
             <div class="grid__column l-8 s-6 xs-12 grid_margin">
                 <p><?php echo get_field('content_fold_body'); ?></p>

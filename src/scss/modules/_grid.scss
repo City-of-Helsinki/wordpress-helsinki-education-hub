@@ -1,60 +1,45 @@
-@media only screen and (max-width: 4000px) {
-    .grid_margin{
-        padding-top: var(--spacing-4-xl);
-        h1,h2{
-            margin-top: 0;
-            margin-bottom: 0;
-        }
-        h3,h4,h5,h6{
-            margin-top: 0;
-        }
-        
-         padding-bottom: var(--spacing-4-xl);
+
+.grid_margin{
+    margin-top: var(--spacing-l) ;
+    margin-bottom: var(--spacing-l);
+
+    @include breakpoint('m'){
+        margin-top: var(--spacing-3-xl) ;
+        margin-bottom: var(--spacing-3-xl) ;
     }
-  }
-
-@media only screen and (max-width: 992px) {
-    .grid_margin{
-       padding-top: var(--spacing-4-xl);
-        h1,h2,h4,h5,h6{
-            margin-top: 0;
-        }
-       padding-bottom: var(--spacing-4-xl);
-    
+    @include breakpoint('l'){
+        margin-top: var(--spacing-4-xl) ;
+        margin-bottom: var(--spacing-4-xl) ;
     }
-  }
-
-
-
-@media only screen and (max-width: 768px) {
-    .grid_margin{
-        padding-top: spacing('l');
-        // padding-left: 50px;
-
-        h1,h2,h3,h4,h5,h6{
-            margin-top: 0;
-            margin-bottom: 0;
-        }
-        h3{
-            margin-bottom:var(--spacing-l);
-        }
-         padding-bottom: var(--spacing-l);
+    &__header{
+        margin-top:0;
+        font-weight: 600;
     }
-  }
-
-
-  @media only screen and (max-width: 576px) {
-    .grid_margin{
-        padding-top: spacing('l');
-        // padding-left: 30px;
-
-        h1,h2,h3,h4,h5,h6{
-            margin-top: 0;
-            margin-bottom: 0;
-        }
-        h3{
-            margin-bottom:var(--spacing-l);
-        }
-         padding-bottom: var(--spacing-l);
+    &.no-mb{
+        margin-bottom: 0;
     }
-  }
+    &.no-mt{
+        margin-top: 0;
+    }
+    @each $breakpoint, $size in $breakpoints {
+        @include breakpointMax($breakpoint) {
+                &.no-mb-up-#{$breakpoint} {
+                    margin-bottom: 0;
+                }
+                &.no-mt-up-#{$breakpoint} {
+                    margin-top: 0;
+                }
+                &.no-m-up-#{$breakpoint} {
+                    margin-bottom: 0;
+                    margin-top: 0;
+                }
+        }
+    }
+}
+main{
+    .grid_margin{
+        .content-top + h2{
+                margin-top: 0;
+        }
+    }
+}

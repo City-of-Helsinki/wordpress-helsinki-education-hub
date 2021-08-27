@@ -35,8 +35,8 @@ $post_query = new WP_Query($args);
 <section  id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
     <div class="hds-container">
       <div class="grid">
-          <div class="grid__column l-4 s-6 xs-12 grid_margin">
-              <h2><?php echo $heading; ?></h2>
+          <div class="grid__column l-4 s-6 xs-12 grid_margin no-mb">
+              <h2 class="grid_margin__header"><?php echo $heading; ?></h2>
           </div>
       </div>
       

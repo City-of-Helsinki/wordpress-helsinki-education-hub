@@ -19,14 +19,14 @@
         font-size: var(--fontsize-heading-l);
     }
 }
-@media only screen and (min-width: 992px) {
+@include breakpoint('m'){
     .article_margin{
         margin-top: var(--spacing-4-xl) ;
       
     }
   }
 
-  @media only screen and (max-width: 992px) {
+  @include breakpoint('l'){
     .article_margin{
        margin: 0;  
     }
