@@ -23,7 +23,9 @@ function educationhub_setup_templates(){
     if (is_post_type_archive('event')){
         remove_action('helsinki_loop_sidebar', 'helsinki_loop_sidebar_categories', 10);
         remove_action('helsinki_loop_sidebar', 'helsinki_loop_sidebar_tags', 20);
+        add_filter('get_the_archive_title_prefix','__return_false');
     }
+
 }
 
 function educationhub_widget_before(){
