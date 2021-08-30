@@ -16,6 +16,11 @@
             margin-top: 0;
         }
     }
+    &__date{
+        &.entry--grid{  
+            margin-bottom: var(--spacing-s);
+        }
+    }
     &__excerpt{
         &--grid{
             line-height: var(--lineheight-s);

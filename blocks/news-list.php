@@ -42,7 +42,7 @@ if( !empty($block['align']) ) {
                             <article class="grid__column entry entry--grid">
                                 <a href="<?php echo esc_url( get_permalink() ); ?>">
                                    <h3 class="entry__title entry__title--grid"><?php echo esc_html( get_the_title() ); ?> </h3> 
-                                
+                                    <p class="entry__date entry--grid"><?php echo esc_html( get_the_date(get_option('date_format')) ); ?></p>
                                     <p class="entry__excerpt--grid excerpt size-m">
                                         <?php helsinki_content_excerpt(); ?>
                                     </p>
