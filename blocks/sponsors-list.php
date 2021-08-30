@@ -41,7 +41,7 @@ $post_query = new WP_Query($args);
       </div>
       
 
-        <div class="grid sponsors-wrapper l-up-5 m-up-3 s-up-3">
+        <div class="grid sponsors-wrapper l-up-5 m-up-3">
           <?php
             if($post_query->have_posts() ) {
                 while($post_query->have_posts() ) {
