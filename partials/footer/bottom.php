@@ -10,10 +10,10 @@
 </section>
 <section class="footer__navigation hds-container">
     <div class="grid">
-        <div class="grid__column l-3 s-6 xs-12">
+        <div class="grid__column l-3 s-4 xs-12">
     	    <?php helsinki_footer_copyright(); ?>
         </div>
-        <div class="grid__column l-3 s-6 xs-12">
+        <div class="grid__column l-9 s-8 xs-12">
     	    <?php helsinki_footer_menu(); ?>
         </div>
     </div>

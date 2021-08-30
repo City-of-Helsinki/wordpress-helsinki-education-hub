@@ -26,15 +26,15 @@ $content_fold_link = get_field('content_fold_link');
 <section  id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
     <div class="hds-container">
         <div class="grid">
-            <div class="grid__column l-4 s-6 xs-12 grid_margin">
+            <div class="grid__column l-4 m-12 grid_margin no-mb">
                 <h2 class="grid_margin__header"><?php echo get_field('content_fold_title'); ?></h2>
             </div>
-            <div class="grid__column l-8 s-6 xs-12 grid_margin">
+            <div class="grid__column l-8 m-12 grid_margin">
                 <p><?php echo get_field('content_fold_body'); ?></p>
                 <?php if (!empty($content_fold_link)): ?>
-                <button class="hds-button button " href="<?php echo $content_fold_link ?>">
+                <a class="hds-button button transparent " href="<?php echo $content_fold_link ?>">
                     <?php echo get_field('content_fold_button'); ?>
-                </button>
+                </a>
                 <?php endif; ?>
             </div>
         </div>

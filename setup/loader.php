@@ -19,7 +19,8 @@ function educationhub_files()
             'assets',
             'templates',
             'theme',
-            'widgets'
+            'widgets',
+            'string-translations'
         ],
 		'post-types' => [
             'sponsors',

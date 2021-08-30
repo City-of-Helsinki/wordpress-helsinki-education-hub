@@ -58,4 +58,31 @@ function educationhub_mime_types($mimes) {
     $mimes['svg'] = 'image/svg+xml';
     return $mimes;
   }
-  add_filter('upload_mimes', 'educationhub_mime_types');
+add_filter('upload_mimes', 'educationhub_mime_types');
+
+add_action('wp_head', 'educationhub_init_header_scripts');
+add_action('wp_footer', 'educationhub_init_footer_scripts');
+
+function educationhub_init_header_scripts(){
+    $scripts = helsinki_theme_mod( 'header_footer_scripts_header', 'header_script_textarea' );
+    educationhub_init_output_scripts($scripts);
+}
+
+function educationhub_init_footer_scripts(){
+
+    $scripts = helsinki_theme_mod( 'header_footer_scripts_header', 'footer_script_textarea' );
+    educationhub_init_output_scripts($scripts);
+}
+
+function educationhub_init_output_scripts($scripts){
+		if ( is_admin() || is_feed() || is_robots() || is_trackback() ) {
+			return;
+		}
+		if ( empty( $scripts ) ) {
+			return;
+		}
+		if ( trim( $scripts ) === '' ) {
+			return;
+		}
+        echo $scripts;
+}

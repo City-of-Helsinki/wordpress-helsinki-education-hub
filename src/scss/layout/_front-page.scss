@@ -1,0 +1,11 @@
+.front-page-section{
+    &:not(.hero):last-child{
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+}
+.hds-container{
+    h2{
+        margin-bottom: var(--spacing-xs);
+    }
+}

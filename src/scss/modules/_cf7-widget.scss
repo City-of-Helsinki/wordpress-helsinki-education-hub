@@ -1,10 +1,18 @@
 footer{
     .widget--cf7-footer{
-        width: 50%;
-        display: flex;
-        flex: 1 1 auto;
-        .widget__title{
-            width: 25%;
+        @include breakpoint('l'){
+            width: 50%;
+            .widget__title{
+                width: 100%;
+            }
+        }
+        @include breakpoint('xl'){
+            display: flex;
+            flex: 1 1 auto;
+            width: 50%;
+            .widget__title{
+                width: 25%;
+            }
         }
     }
 
@@ -17,4 +25,24 @@ footer{
             }
         }
     }
+    .wpcf7-not-valid-tip{
+        color: #8D0D30;
+        font-weight: 500;
+    }
+    .hds-text-input__error-text{
+        color: #8D0D30;
+        font-weight: 500;
+        &:before{
+            background: #8D0D30;
+
+        }
+    }
+}
+.wpcf7{
+    form{
+        .wpcf7-response-output{
+            border: none;
+            font-style: italic;
+        }
+    } 
 }

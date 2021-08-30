@@ -19,19 +19,22 @@ if( !empty($block['className']) ) {
 if( !empty($block['align']) ) {
     $className .= ' align' . $block['align'];
 }
+$event_query = educationhub_events_get_latest();
+if (!$event_query->have_posts())
+    return false;
 ?>
 
 <section  id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
     <div class="hds-container">
         <div class="grid">
-            <div class="grid__column l-4 grid_margin no-mb-up-l">
-                <h2 class="grid_margin__header"><?php echo __("Events", "educationhub") ?></h2>
+            <div class="grid__column l-4 m-12 grid_margin no-mb-up-l">
+                <h2 class="grid_margin__header"><?php pll_e("Events", "educationhub") ?></h2>
             </div>
-            <div class="grid__column l-8 grid_margin no-mt-up-l">
-                <h3 class="grid_margin__header"><?php echo __("Upcoming events", "educationhub") ?></h3>
+            <div class="grid__column l-8 m-12 grid_margin">
+                <h3 class="grid_margin__header"><?php pll_e("Upcoming events", "educationhub") ?></h3>
                 <div class="grid s-up-2 l-up-3">
                 <?php
-                    $event_query = educationhub_events_get_latest();
+                    
                     while ( $event_query->have_posts() ) {
                         $event_query->the_post(); 
         
@@ -50,7 +53,7 @@ if( !empty($block['align']) ) {
 
                 </div>
 
-                <a class="button hds-button" href="<?php echo get_post_type_archive_link('event') ?>"><?php echo __('All Events', 'educationhub') ?></a>
+                <a class="button hds-button transparent" href="<?php echo get_post_type_archive_link('event') ?>"><?php pll_e('All Events', 'educationhub') ?></a>
             </div>
         </div>
     </div>
