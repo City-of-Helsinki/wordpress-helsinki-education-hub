@@ -25,10 +25,10 @@ if( !empty($block['align']) ) {
     <div class="hds-container">
         <div class="grid">
             <div class="grid__column l-4 grid_margin no-mb-up-l">
-                <h2 class="grid_margin__header"><?php echo __("Events", "educationhub") ?></h2>
+                <h2 class="grid_margin__header"><?php pll_e("Events", "educationhub") ?></h2>
             </div>
             <div class="grid__column l-8 grid_margin no-mt-up-l">
-                <h3 class="grid_margin__header"><?php echo __("Upcoming events", "educationhub") ?></h3>
+                <h3 class="grid_margin__header"><?php pll_e("Upcoming events", "educationhub") ?></h3>
                 <div class="grid s-up-2 l-up-3">
                 <?php
                     $event_query = educationhub_events_get_latest();
@@ -50,7 +50,7 @@ if( !empty($block['align']) ) {
 
                 </div>
 
-                <a class="button hds-button" href="<?php echo get_post_type_archive_link('event') ?>"><?php echo __('All Events', 'educationhub') ?></a>
+                <a class="button hds-button" href="<?php echo get_post_type_archive_link('event') ?>"><?php pll_e('All Events', 'educationhub') ?></a>
             </div>
         </div>
     </div>
