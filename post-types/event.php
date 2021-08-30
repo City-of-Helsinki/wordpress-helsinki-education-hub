@@ -126,10 +126,12 @@ add_filter( 'pre_get_posts' , 'educationhub_event_order', 10, 1 );
 function educationhub_event_order( $query ) {
 	
 	// Check if the query is for an archive
-		if ( is_post_type_archive( 'event' ) && $query->is_main_query() ) {
-			$query->set( 'orderby', 'meta_value' );
-			$query->set( 'order', 'DESC' );
+		if (!is_admin() && is_post_type_archive( 'event' ) && $query->is_main_query() ) {
+			$query->set( 'orderby', 'meta_value_num' );
+			$query->set( 'order', 'ASC' );
 			$query->set( 'meta_key', 'event_starts_date' );
+			$query->set( 'meta_type', 'NUMERIC');
+			$query->set( 'meta_query', educationhub_events_get_latest_meta_query_params() );
 	}
 	
 	return $query;

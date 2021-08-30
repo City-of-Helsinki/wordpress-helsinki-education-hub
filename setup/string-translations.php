@@ -14,7 +14,7 @@ function educationhub_register_polylang_strings() {
     pll_register_string('Upcoming events', 'Upcoming events', $group);
     pll_register_string('Contact', 'Contact', $group);
     pll_register_string('Event starts', 'Event starts', $group);
-
+    pll_register_string('No upcoming events.', 'No upcoming events.', $group);
     
     // pll_register_string('', '', $group);
 
