@@ -13,3 +13,6 @@
         }
     }
 }
+.view-header{
+    @include lift-block-light(var(--color-copper));
+}

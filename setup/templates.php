@@ -1,9 +1,12 @@
 <?php
 
 function educationhub_setup_templates(){
-    // Remove footer element top ornament
+    // Remove koros from header and footer
     remove_action('helsinki_footer', 'helsinki_footer_koros');
     add_action('helsinki_footer_widgets_before', 'educationhub_widget_before');
+
+    add_filter('helsinki_hero_class_koros', '__return_false');
+    remove_action('helsinki_front_page_hero_image', 'helsinki_front_page_hero_koros');
 
     // Remove title from hero
     remove_action('helsinki_front_page_hero_content', 'helsinki_front_page_hero_title', 10);
@@ -23,7 +26,9 @@ function educationhub_setup_templates(){
     if (is_post_type_archive('event')){
         remove_action('helsinki_loop_sidebar', 'helsinki_loop_sidebar_categories', 10);
         remove_action('helsinki_loop_sidebar', 'helsinki_loop_sidebar_tags', 20);
+        add_filter('get_the_archive_title_prefix','__return_false');
     }
+
 }
 
 function educationhub_widget_before(){

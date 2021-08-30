@@ -6,7 +6,7 @@ if (is_singular('event')){
 ?>
 
 <div class="content__date date">
-    <span class="screen-reader-text"><?php esc_html_e('Event starts', 'educationhub'); ?>:</span>
+    <span class="screen-reader-text"><?php pll_e('Event starts', 'educationhub'); ?>:</span>
     <time class="<?php echo $icon_class ?>" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
         <?php if (!empty($icon_class)) :
             helsinki_svg_icon('calendar-clock'); 
