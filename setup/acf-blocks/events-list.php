@@ -16,9 +16,36 @@ function educationhub_acf_init_block_type_events_list() {
     }
 }
 
-function educationhub_events_get_latest(){
+function educationhub_events_get_latest_meta_query_params(){
     $date_start = date('Ymd');
-
+    $meta = array(
+        'relation' => 'OR',
+        array(
+            'relation' => 'AND',
+            array(
+                'key'       => 'event_starts_date',
+                'compare'   => '>=',
+                'value'     => $date_start,
+                'type'      => 'DATE'
+            ),
+            array(
+                'key'       => 'event_ends_date',
+                'compare'   => '=',
+                'value'     => ''
+            ),
+        ),
+        array(
+            array(
+                'key'       => 'event_ends_date',
+                'compare'   => '>=',
+                'value'     => $date_start,
+                'type'      => 'DATE'
+            ),
+        )
+    );
+    return $meta;
+}
+function educationhub_events_get_latest(){
     $args = array(
         'post_type' => 'event',
         'posts_per_page' => 6,
@@ -26,31 +53,8 @@ function educationhub_events_get_latest(){
         'meta_key' => 'event_starts_date',
         'meta_type' => 'NUMERIC',
         'order' => 'ASC',
-        'meta_query' => array(
-            'relation' => 'OR',
-            array(
-                'relation' => 'AND',
-                array(
-                    'key'       => 'event_starts_date',
-                    'compare'   => '>=',
-                    'value'     => $date_start,
-                    'type'      => 'DATE'
-                ),
-                array(
-                    'key'       => 'event_ends_date',
-                    'compare'   => '=',
-                    'value'     => ''
-                ),
-            ),
-            array(
-                array(
-                    'key'       => 'event_ends_date',
-                    'compare'   => '>=',
-                    'value'     => $date_start,
-                    'type'      => 'DATE'
-                ),
-            )
-        )
+        'meta_query' => educationhub_events_get_latest_meta_query_params()
+
     );
     
     $post_query = new WP_Query($args);

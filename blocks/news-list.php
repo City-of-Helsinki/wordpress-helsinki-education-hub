@@ -19,13 +19,18 @@ if( !empty($block['className']) ) {
 if( !empty($block['align']) ) {
     $className .= ' align' . $block['align'];
 }
+
+$newsTitle = esc_html( get_field("news_title") );
+if (empty($newsTitle)){
+    $newsTitle = __('Recent Posts', 'helsinki-universal');
+}
 ?>
 
 <section  id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
     <div class="hds-container">
         <div class="grid">
             <div class="grid__column l-4 m-12 grid_margin no-mb-up-l">
-                <h2 class="grid_margin__header"><?php echo __('Recent Posts', 'helsinki-universal') ?></h2>
+                <h2 class="grid_margin__header"><?php echo $newsTitle ?></h2>
             </div>
             <div class="grid__column l-8 m-12 grid_margin">
                 <div class="grid s-up-2 l-up-3">

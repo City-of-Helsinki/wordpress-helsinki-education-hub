@@ -19,6 +19,9 @@ if( !empty($block['className']) ) {
 if( !empty($block['align']) ) {
     $className .= ' align' . $block['align'];
 }
+$event_query = educationhub_events_get_latest();
+if (!$event_query->have_posts())
+    return false;
 ?>
 
 <section  id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
@@ -31,7 +34,7 @@ if( !empty($block['align']) ) {
                 <h3 class="grid_margin__header"><?php pll_e("Upcoming events", "educationhub") ?></h3>
                 <div class="grid s-up-2 l-up-3">
                 <?php
-                    $event_query = educationhub_events_get_latest();
+                    
                     while ( $event_query->have_posts() ) {
                         $event_query->the_post(); 
         
