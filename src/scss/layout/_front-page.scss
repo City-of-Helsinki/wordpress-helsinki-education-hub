@@ -1,0 +1,6 @@
+.front-page-section{
+    &:not(.hero):last-child{
+        padding-bottom: 0;
+    }
+}
+ 

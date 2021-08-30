@@ -24,10 +24,10 @@ if( !empty($block['align']) ) {
 <section  id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
     <div class="hds-container">
         <div class="grid">
-            <div class="grid__column l-4 grid_margin no-mb-up-l">
+            <div class="grid__column l-4 m-12 grid_margin no-mb-up-l">
                 <h2 class="grid_margin__header"><?php echo __('Recent Posts', 'helsinki-universal') ?></h2>
             </div>
-            <div class="grid__column l-8 grid_margin no-mt-up-l">
+            <div class="grid__column l-8 m-12 grid_margin">
                 <div class="grid s-up-2 l-up-3">
                 <?php
                     $event_query = helsinki_front_page_recent_posts_query(array(
@@ -54,7 +54,7 @@ if( !empty($block['align']) ) {
                 ?>
 
                 </div>
-                <a class="button hds-button" href="<?php echo esc_url(get_permalink(get_option('page_for_posts'))); ?>">
+                <a class="button hds-button transparent" href="<?php echo esc_url(get_permalink(get_option('page_for_posts'))); ?>">
                     <?php
                         esc_html_e('All posts', 'helsinki-universal');
                     ?>
