@@ -9,6 +9,7 @@ function educationhub_setup_theme(){
             'some_menu'      => esc_html_x('Social Media Link', 'Registered menu name', 'helsinki-universal')
         ]
     );
+    add_theme_support( 'align-wide' );
 }
 
 
